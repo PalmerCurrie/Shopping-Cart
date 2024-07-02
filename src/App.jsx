@@ -1,26 +1,29 @@
 import './App.css'
 
-// import { useState, useEffect } from 'react'
-import ItemCard from './components/ItemCard'
-// import itemFunctions from './itemFunctions'
+// import { useEffect } from 'react'
+// useState, 
+
+import ShoppingPage from './components/ShoppingPage.jsx';
+import itemFunctions from './itemFunctions'
 
 
 function App() {
 
-  // const {items, setItems, cartItems, setCartItems} = itemFunctions();
 
-
-  const item1 = {
-    name: "test Item",
-    price: 5000,
-    description: "testing",
-    imageURL:  null,} 
+  const {items} = itemFunctions();
+  // setItems, cartItems, setCartItems
+  console.log(items);
 
   
   return (
     <>
-      <div>
-        <ItemCard item={item1} />
+      <div className='app-container'>
+        <div className='header'> HEADER </div>
+        <div className='app-content'>
+          <div className='sidebar'> SIDEBAR </div>
+          <ShoppingPage items={items}/>
+        </div>
+
       </div>
     </>
   )
