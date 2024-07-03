@@ -1,9 +1,13 @@
 /* eslint-disable react/prop-types */
 import '../styles/ItemContainer.css';
 import ItemCard from './ItemCard';
+import Spinner from './Spinner';
 
-function ItemContainer({ items }) {
-  // No need to use renderItemCards as a separate function, you can directly use JSX in return
+function ItemContainer({ items, loading }) {
+
+  if (loading) {
+    return <Spinner />; // Show spinner if items are still loading
+  }
   return (
     <div className='shopping-page-container'>
       <div className='item-header'>
