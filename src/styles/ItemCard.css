@@ -1,22 +1,61 @@
+/* ItemCard.css */
 .item-card {
-    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 450px; /* Set a minimum height of 400px */
+    width: 100%; 
+  }
+  
+  
+  
+  .item-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    cursor: pointer;
+  }
+  
+  .item-image {
+    flex: 1;
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+  
+  .item-image img {
     width: 100%;
-    background-color: grey;
-}
-
-
-.item-image {
-
-}
-
-.item-image img {
-
-}
-
-.item-details {
-
-}
-
-.item-details p {
-    
-}
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+  
+  .placeholder-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    height: 100%;
+    color: #ccc;
+  }
+  
+  .item-details {
+    padding: 12px;
+    background-color: #fff;
+  }
+  
+  .item-details p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .item-details p:first-child {
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
