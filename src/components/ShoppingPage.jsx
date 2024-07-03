@@ -3,10 +3,8 @@ import '../styles//ShoppingPage.css'
 import ItemCard from './ItemCard';
 
 function ShoppingPage({items}) {
-  console.log("loading Shopping Page");
 
   const renderItemCards = () => {
-    console.log("rendering");
     return (
         <div className='item-container' id='item-container'>
             {items.map((item, index) => (
@@ -22,7 +20,7 @@ function ShoppingPage({items}) {
   return (
     <>
       <div className='shopping-page-container'>
-        <div className='header'> Placeholder header</div>
+        <div className='item-header'> Placeholder header</div>
             {renderItemCards()}
         </div>
     </>

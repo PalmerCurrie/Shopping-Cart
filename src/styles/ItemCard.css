@@ -8,26 +8,31 @@
     cursor: pointer;
     display: flex;
     flex-direction: column;
-    min-height: 450px; /* Set a minimum height of 400px */
-    max-height: 550px;
+    min-height: 350px;
+    max-height: 500px;
     width: 100%; 
-    background-color: #fff;
-  }
-  
-  
-  
-  .item-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-    cursor: pointer;
-  }
-  
-  .item-image {
-    margin: 10px;
-    flex: 1;
     position: relative;
-    height: 60%;
-    width: 60%;
+    background-color: #fff;
+    outline: 10px solid rgba(128, 128, 128, 0.33);
+    outline-offset: -10px;
+  }
+  
+
+
+.item-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    outline-color: #8dc6ff; /* Outline color on hover */
+    transition: outline-color 0.3s ease, transform 0.3s ease; 
+}
+  
+    
+  .item-image {
+    margin: 20px;
+    flex: 1 1 400px; /* Adjust the initial size to fit your design */
+    position: relative;
+    height: 50%;
+    width: 50%;
     overflow: hidden;
     object-fit: cover;
     justify-content: center;
@@ -39,8 +44,6 @@
   .item-image img {
     width: 100%;
     height: auto;
-    display: block;
-    object-fit: cover;
   }
   
   .placeholder-image {
@@ -53,17 +56,17 @@
   }
   
   .item-details {
-    padding: 12px;
+    padding: 20px;
     background-color: #fff;
   }
   
-  .item-details p {
+.item-details p {
     margin: 0;
     font-size: 16px;
     color: #333;
-  }
+}
   
-  .item-details p:first-child {
+.item-details p:first-child {
     font-weight: bold;
     margin-bottom: 4px;
-  }
+}

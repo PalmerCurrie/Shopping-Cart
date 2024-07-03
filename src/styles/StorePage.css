@@ -1,0 +1,19 @@
+.app-content {
+    display: grid;
+    grid-template-columns: 200px 1fr; /* Sidebar width and the rest */
+    grid-template-rows: 1fr; /* Single row for main content */
+    height: 100%;
+  }
+  
+  .sidebar {
+    background-color: #fff; /* Adjust as needed */
+    border-right: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .main-content {
+    background-color: #fff; /* Adjust as needed */
+    padding: 20px;
+  }

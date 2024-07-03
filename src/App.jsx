@@ -1,31 +1,32 @@
 import './App.css'
 
 // import { useEffect } from 'react'
-// useState, 
 
-import ShoppingPage from './components/ShoppingPage.jsx';
 import ItemFunctions from './itemFunctions.js';
+import Header from './components/Header.jsx';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import StorePage from './components/StorePage.jsx';
+import HomePage from './components/HomePage.jsx';
+import CartPage from './components/CartPage.jsx';
 
 function App() {
 
 
   const {items} = ItemFunctions();
   // setItems, cartItems, setCartItems
-  console.log(items[0]);
-
   
   return (
-    <>
-      <div className='app-container'>
-        <div className='header'> HEADER </div>
-        <div className='app-content'>
-          <div className='sidebar'> SIDEBAR </div>
-          <ShoppingPage items={items}/>
-        </div>
-
+    <Router>
+      <div className="app-container">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/store" element={<StorePage items={items} />} />
+          <Route path="/cart" element={<CartPage />} />
+        </Routes>
       </div>
-    </>
-  )
+    </Router>
+  );
 }
 
 export default App
