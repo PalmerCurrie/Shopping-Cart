@@ -41,7 +41,7 @@ function Header() {
             <Link to="/cart" className="shopping-link">
                 <div className="shopping-bag">
                     {/* Placeholder for shopping bag/cart icon */}
-                    <img src="/path/to/shopping-bag-icon.png" alt="Shopping Bag" />
+                    <img src="/shopping-bag.svg" alt="Shopping Bag" />
                 </div>
             </Link>
         </header>
