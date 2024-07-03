@@ -1,11 +1,12 @@
 .app-content {
     display: grid;
-    grid-template-columns: 200px 1fr; /* Sidebar width and the rest */
+    grid-template-columns: 275px 1fr; /* Sidebar width and the rest */
     grid-template-rows: 1fr; /* Single row for main content */
     height: 100%;
   }
   
   .sidebar {
+    width: 250px;
     background-color: #fff; /* Adjust as needed */
     border-right: 1px solid #fff;
     display: flex;

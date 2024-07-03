@@ -1,16 +1,16 @@
 /* eslint-disable react/prop-types */
 import '../styles/StorePage.css'
-import ShoppingPage from './ShoppingPage'
+import ItemContainer from './ItemContainer'
+import Sidebar from './Sidebar'
 
 function StorePage({items}) {
 
 
-  
   return (
     <>
       <div className='app-content'>
-          <div className='sidebar'> SIDEBAR </div>
-          <ShoppingPage items={items}/>
+          <Sidebar />
+          <ItemContainer items={items}/>
         </div>
     </>
   )

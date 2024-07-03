@@ -30,15 +30,43 @@ export default function itemFunctions() {
         }
     };
 
-// Loads items when componenet mounts
+    // Loads items when componenet mounts
   useEffect(() => {
     getItems(); 
     }, []);
     
 
+    const [category, setCategory] = useState("");
+
+    const getItemsInCategory = async (filterCategory) => {
+        if (!filterCategory) {
+           return; 
+        }
+        try {
+            const res = await fetch(`https://fakestoreapi.com/products/category/${filterCategory}`);
+            if (!res.ok) {
+                throw new Error('Failed to fetch data');
+            }
+            
+            const text = await res.text();
+            if (!text) {
+                throw new Error('Response is empty');
+            }
+            const data = JSON.parse(text);
+            setItems(data);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    useEffect(() => {
+        getItemsInCategory(category);
+    }, [category]);
+    // If category changes update items based on the filter category
 
 
-  return {items, getItems};
+
+  return {items, setItems, getItems, setCategory};
 //   , cartItems, setCartItems
 
 

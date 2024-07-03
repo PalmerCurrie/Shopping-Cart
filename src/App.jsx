@@ -13,7 +13,6 @@ function App() {
 
 
   const {items} = ItemFunctions();
-  // setItems, cartItems, setCartItems
   
   return (
     <Router>
