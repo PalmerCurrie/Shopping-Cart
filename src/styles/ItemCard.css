@@ -13,6 +13,7 @@
     width: 100%; 
     position: relative;
     background-color: #fff;
+    border: #fff;
     outline: 10px solid rgba(128, 128, 128, 0.33);
     outline-offset: -10px;
   }
