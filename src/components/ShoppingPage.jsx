@@ -20,7 +20,9 @@ function ShoppingPage({items}) {
   return (
     <>
       <div className='shopping-page-container'>
-        <div className='item-header'> Placeholder header</div>
+        <div className='item-header'>
+            <p>Items ({items.length})</p>
+        </div>
             {renderItemCards()}
         </div>
     </>
