@@ -4,15 +4,14 @@ import './App.css'
 // useState, 
 
 import ShoppingPage from './components/ShoppingPage.jsx';
-import itemFunctions from './itemFunctions'
-
+import ItemFunctions from './itemFunctions.js';
 
 function App() {
 
 
-  const {items} = itemFunctions();
+  const {items} = ItemFunctions();
   // setItems, cartItems, setCartItems
-  console.log(items);
+  console.log(items[0]);
 
   
   return (
