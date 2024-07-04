@@ -9,6 +9,11 @@ const [selectedCategory, setSelectedCategory] = useState('');
 const [dropdownOpen, setDropdownOpen] = useState(false);
 
 const handleCategoryClick = (category) => {
+  if (category == selectedCategory) {
+    setSelectedCategory("");
+    setCategory("");
+    return;
+  }
     setSelectedCategory(category);
     setCategory(category);
 }

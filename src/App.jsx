@@ -9,7 +9,7 @@ import CartPage from './components/CartPage.jsx';
 
 function App() {
 
-  const NUMBER_OF_ITEMS = 10; // Number of Items on Initial Render
+  const NUMBER_OF_ITEMS = 14; // Number of Items on Initial Render
 
   const [items, setItems] = useState([ ]);
   const [category, setCategory] = useState("");
@@ -31,7 +31,7 @@ function App() {
 
 const getItemsInCategory = async (filterCategory) => {
   if (!filterCategory) {
-    return;
+    getItems;
   }
   try {
     const res = await fetch(`https://fakestoreapi.com/products/category/${filterCategory}`);
@@ -63,6 +63,9 @@ const getItemsInCategory = async (filterCategory) => {
       if (category) {
         setLoading(true);
         await getItemsInCategory(category);
+      } else {
+        setLoading(true);
+        await getItems();
       }
     };
 

@@ -1,4 +1,4 @@
-import '../styles/Spinner.css'; // Ensure you have this CSS file
+import '../styles/Spinner.css';
 
 const Spinner = () => (
   <div className="spinner">
