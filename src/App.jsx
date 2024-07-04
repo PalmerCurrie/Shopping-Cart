@@ -14,6 +14,7 @@ function App() {
   const [items, setItems] = useState([ ]);
   const [category, setCategory] = useState("");
   const [loading, setLoading] = useState(true);
+  const [cartItems, setCartItems] = useState([]);
 
   const getItems = async () => {
     try {
@@ -72,14 +73,20 @@ const getItemsInCategory = async (filterCategory) => {
     fetchItemsByCategory();
   }, [category]);
 
+
   
   return (
     <Router>
       <div className="app-container">
-        <Header />
+        <Header cartItems={cartItems}/>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/store" element={<StorePage items={items} setCategory={setCategory} loading={loading}/>} />
+          <Route path="/store" element={<StorePage 
+                                          items={items} 
+                                          setCategory={setCategory} 
+                                          loading={loading} 
+                                          cartItems={cartItems} 
+                                          setCartItems={setCartItems}/>} />
           <Route path="/cart" element={<CartPage />} />
         </Routes>
       </div>

@@ -1,18 +1,8 @@
+/* eslint-disable react/prop-types */
 import '../styles/Header.css'
 import { Link } from 'react-router-dom'
 
-function Header() {
-
-//   const renderItemCards = () => {
-//     return (
-//         <div className='item-container' id='item-container'>
-//             {items.map((item, index) => (
-//           <ItemCard key={index} item={item} />
-//         ))}
-//         </div>
-//     )
-//   }
-
+function Header({cartItems}) {
 
   return (
     <>
@@ -42,6 +32,7 @@ function Header() {
                 <div className="shopping-bag">
                     {/* Placeholder for shopping bag/cart icon */}
                     <img src="/shopping-bag.svg" alt="Shopping Bag" />
+                   <div> {cartItems.length} </div>  {/* PLACEHOLDER FOR CART ITEMS LENGTH THING */}
                 </div>
             </Link>
         </header>
