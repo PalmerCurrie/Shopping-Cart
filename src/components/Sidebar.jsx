@@ -1,16 +1,19 @@
 /* eslint-disable react/prop-types */
 import '../styles//Sidebar.css'
 import { useState } from 'react';
-import itemFunctions from '../itemFunctions';
 
-function Sidebar() {
+function Sidebar({setCategory}) {
 
 
-const {setCategory} = itemFunctions();
 const [selectedCategory, setSelectedCategory] = useState('');
 const [dropdownOpen, setDropdownOpen] = useState(false);
 
 const handleCategoryClick = (category) => {
+  if (category == selectedCategory) {
+    setSelectedCategory("");
+    setCategory("");
+    return;
+  }
     setSelectedCategory(category);
     setCategory(category);
 }

@@ -3,10 +3,11 @@ import '../styles//ItemCard.css'
 
 import PropTypes from 'prop-types';
 
-function ItemCard({item}) {
+function ItemCard({item, onAddToCart}) {
+
 
   return (
-    <div className='item-card'>
+    <div className='item-card' onClick={onAddToCart}>
       <div className='item-image'>
         {item.image ? (
           <img src={item.image} alt={`${item.title} - image`} />
