@@ -9,7 +9,7 @@ function HomePage() {
       <p className='home-description'>An online shopping experience for all your needs!</p>
       <div className='shop-now-button'>
         <Link to="/store">
-          <button className='button'> Shop Now</button>
+          <button className='button'>Shop Now</button>
         </Link>
       </div>
     </div>
