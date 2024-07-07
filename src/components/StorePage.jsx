@@ -3,7 +3,7 @@ import '../styles/StorePage.css'
 import ItemContainer from './ItemContainer'
 import Sidebar from './Sidebar'
 
-function StorePage({items, setCategory, loading, cartItems, setCartItems}) {
+function StorePage({items, setCategory, loading, cartItems, addItemToCart}) {
 
 
 
@@ -16,7 +16,7 @@ function StorePage({items, setCategory, loading, cartItems, setCartItems}) {
             items={items} 
             loading={loading} 
             cartItems={cartItems}
-            setCartItems={setCartItems}/>
+            addItemToCart={addItemToCart}/>
         </div>
     </>
   )

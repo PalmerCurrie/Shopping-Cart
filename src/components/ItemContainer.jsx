@@ -3,17 +3,11 @@ import '../styles/ItemContainer.css';
 import ItemCard from './ItemCard';
 import Spinner from './Spinner';
 
-function ItemContainer({ items, loading, cartItems, setCartItems }) {
+function ItemContainer({ items, loading, addItemToCart }) {
 
   if (loading) {
     return <Spinner />; // Show spinner if items are still loading
   }
-
-  const addItemToCart = (itemToAdd) => {
-    // Implement set like structure to maintain property of no duplicates.
-      const newCart = [...cartItems, itemToAdd];
-      setCartItems(newCart);
-  };
 
 
 
@@ -24,7 +18,7 @@ function ItemContainer({ items, loading, cartItems, setCartItems }) {
       </div>
       <div className='item-container' id='item-container'>
         {items.map((item, index) => (
-          <ItemCard key={index} item={item} onAddToCart={addItemToCart} />
+          <ItemCard key={index} item={item} addItemToCart={addItemToCart} />
         ))}
       </div>
     </div>

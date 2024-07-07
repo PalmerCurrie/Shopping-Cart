@@ -16,6 +16,16 @@ function App() {
   const [loading, setLoading] = useState(true);
   const [cartItems, setCartItems] = useState([]);
 
+  const addItemToCart = (item) => {
+    setCartItems(prevCartItems => {
+      const itemExists = prevCartItems.some(cartItem => cartItem.id === item.id);
+      if (itemExists) {
+        return prevCartItems; 
+      }
+      return [...prevCartItems, item];
+    });
+  };
+
   const getItems = async () => {
     try {
         const res = await fetch(`https://fakestoreapi.com/products?limit=${NUMBER_OF_ITEMS}`);
@@ -86,7 +96,7 @@ const getItemsInCategory = async (filterCategory) => {
                                           setCategory={setCategory} 
                                           loading={loading} 
                                           cartItems={cartItems} 
-                                          setCartItems={setCartItems}/>} />
+                                          addItemToCart={addItemToCart}/>} />
           <Route path="/cart" element={<CartPage />} />
         </Routes>
       </div>
