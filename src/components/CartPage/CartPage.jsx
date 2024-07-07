@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import '../../styles/CartPage.css';
 import Spinner from '../Spinner';
-import Checkout from './Checkout';
+import Checkout from './Checkout'; 
 import CartItemCard from './CartItemCard';
+import { Link } from 'react-router-dom';
 
 function CartPage({cartItems, setCartItems, loading}) {
 
@@ -11,6 +12,11 @@ function CartPage({cartItems, setCartItems, loading}) {
       <div className='cart-page'>
         <h1>Check Out</h1>
         <p>You cart appears to be empty! Visit the store to shop for more items!</p>
+        <div className='shop-now-button'>
+        <Link to="/store">
+          <button className='button'> Shop Now</button>
+        </Link>
+      </div>
       </div>
     )
   }
@@ -41,6 +47,11 @@ function CartPage({cartItems, setCartItems, loading}) {
         setCartItems(updatedItems);
     }
 
+    const removeItemFromCart = (itemToDelete) => {
+      const updatedItems = cartItems.filter(item => item.id !== itemToDelete.id);
+      setCartItems(updatedItems);
+  }
+
     const totalCartPrice = cartItems.reduce((total, item) => {
       return total + (item.price * item.quantity);
   }, 0);
@@ -53,6 +64,7 @@ function CartPage({cartItems, setCartItems, loading}) {
           itemQuantity={item.quantity} 
           increaseItemQuantity={() => increaseItemQuantity(item)}
           decreaseItemQuantity={() => decreaseItemQuantity(item)}
+          removeItemFromCart={() => removeItemFromCart(item)}
           />
         ))}
       </div>
@@ -62,28 +74,5 @@ function CartPage({cartItems, setCartItems, loading}) {
     </div>
   );
 }
-
-
-
-
-
-{/* <h1>Check Out</h1>
-      <p>Thank you for shopping with cart.</p>
-      <p>Please review your items and proceed to checkout to complete your shopping experience!</p> */}
-
-
-//   return (
-//     <div className='shopping-page-container'>
-//       <div className='item-header'>
-//         <p>Items ({items.length})</p>
-//       </div>
-//       <div className='item-container' id='item-container'>
-//         {items.map((item, index) => (
-//           <ItemCard key={index} item={item} addItemToCart={addItemToCart} />
-//         ))}
-//       </div>
-//     </div>
-//   );
-// }
 
 export default CartPage;

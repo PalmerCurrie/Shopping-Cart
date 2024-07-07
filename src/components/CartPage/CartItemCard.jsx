@@ -1,19 +1,16 @@
 /* eslint-disable react/prop-types */
 import '../../styles//CartItemCard.css'
 
-function CartItemCard({item, itemQuantity, increaseItemQuantity, decreaseItemQuantity}) {
-
-    // TODO:
-                    // - Finish Quantity and Buttons
-            // - Price based on quantity
-    // - Remove from Cart button
-    // Then Checkout Component
+function CartItemCard({item, itemQuantity, increaseItemQuantity, decreaseItemQuantity, removeItemFromCart}) {
 
     const handleIncreaseItem = () => {
         increaseItemQuantity(item);
     }
     const handleDecreaseItem = () => {
         decreaseItemQuantity(item);
+    }
+    const handleDeleteItem = () => {
+        removeItemFromCart(item);
     }
 
     return (
@@ -40,7 +37,7 @@ function CartItemCard({item, itemQuantity, increaseItemQuantity, decreaseItemQua
                     <button onClick={handleIncreaseItem}>+</button>
                 </div>
                 <div className='item-price-container'>
-                    <button className='remove-item'>🗑️</button>
+                    <button className='remove-item' onClick={handleDeleteItem}>🗑️</button>
                     <p className='item-price'>${(item.price * itemQuantity).toFixed(2)}</p>
                 </div>
           </div>
