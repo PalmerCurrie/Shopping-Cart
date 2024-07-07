@@ -1,15 +1,20 @@
 /* eslint-disable react/prop-types */
 import '../../styles//CartItemCard.css'
 
-function CartItemCard({item}) {
-
+function CartItemCard({item, itemQuantity, increaseItemQuantity, decreaseItemQuantity}) {
 
     // TODO:
-    // - Finish Quantity and Buttons
-    // - Price based on quantity
+                    // - Finish Quantity and Buttons
+            // - Price based on quantity
     // - Remove from Cart button
     // Then Checkout Component
 
+    const handleIncreaseItem = () => {
+        increaseItemQuantity(item);
+    }
+    const handleDecreaseItem = () => {
+        decreaseItemQuantity(item);
+    }
 
     return (
         <div className='cart-item-card'>
@@ -27,16 +32,16 @@ function CartItemCard({item}) {
                     <p className='item-stock'>
                     <span className='in-stock'>In Stock</span>
                     </p>
-                    <p className='item-quantity'>Qty: {item.quantity}</p>
+                    <p className='item-quantity'>Qty: {itemQuantity}</p>
                 </div>
                 <div className='item-quantity-controls'>
-                    <button>-</button>
-                    <span>{item.quantity}</span>
-                    <button>+</button>
+                    <button onClick={handleDecreaseItem}>-</button>
+                    <span>{itemQuantity}</span>
+                    <button onClick={handleIncreaseItem}>+</button>
                 </div>
                 <div className='item-price-container'>
                     <button className='remove-item'>🗑️</button>
-                    <p className='item-price'>${item.price}</p>
+                    <p className='item-price'>${(item.price * itemQuantity).toFixed(2)}</p>
                 </div>
           </div>
         </div>
