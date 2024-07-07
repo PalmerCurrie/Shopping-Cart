@@ -2,7 +2,7 @@
 
 A Shopping Cart made with Javascript, HTML, and CSS, run using Vite + React. Shopping Cart using the Fake Store API.
 
-[Shopping Cart Preview](https://main--palmercurrie-memory-game.netlify.app/)
+[Shopping Cart Preview](https://palmercurrie-shopping-cart.netlify.app/)
 
 # Features
 - Home Page, Store Page, Shopping Cart Page
