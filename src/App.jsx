@@ -3,9 +3,9 @@ import './App.css'
 import { useEffect, useState } from 'react'
 import Header from './components/Header.jsx';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import StorePage from './components/StorePage.jsx';
+import StorePage from './components/StorePage/StorePage.jsx';
 import HomePage from './components/HomePage.jsx';
-import CartPage from './components/CartPage.jsx';
+import CartPage from './components/CartPage/CartPage.jsx';
 
 function App() {
 
@@ -97,7 +97,7 @@ const getItemsInCategory = async (filterCategory) => {
                                           loading={loading} 
                                           cartItems={cartItems} 
                                           addItemToCart={addItemToCart}/>} />
-          <Route path="/cart" element={<CartPage />} />
+          <Route path="/cart" element={<CartPage cartItems={cartItems}/>} />
         </Routes>
       </div>
     </Router>

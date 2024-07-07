@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import '../styles//ItemCard.css'
+import '../../styles//ItemCard.css'
 
 import PropTypes from 'prop-types';
 

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import '../styles/ItemContainer.css';
+import '../../styles/ItemContainer.css';
 import ItemCard from './ItemCard';
-import Spinner from './Spinner';
+import Spinner from '../Spinner';
 
 function ItemContainer({ items, loading, addItemToCart }) {
 

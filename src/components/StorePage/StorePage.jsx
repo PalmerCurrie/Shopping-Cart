@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import '../styles/StorePage.css'
+import '../../styles/StorePage.css'
 import ItemContainer from './ItemContainer'
-import Sidebar from './Sidebar'
+import Sidebar from '../Sidebar'
 
 function StorePage({items, setCategory, loading, cartItems, addItemToCart}) {
 

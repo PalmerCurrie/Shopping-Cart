@@ -1,0 +1,125 @@
+/* CartItemCard.css */
+.cart-item-card {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-height: 200px;
+    max-width: 1000px;
+  }
+  
+  .cart-item-image {
+    max-width: 200px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .cart-item-image img {
+    margin-left: 50px;
+    position: relative;
+    height: 45%;
+    width: 45%;
+    object-fit: cover;
+  }
+  
+  .cart-placeholder-image {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+
+
+
+
+
+
+
+  
+  
+.cart-item-details-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    width: 100%;
+    margin-left: 15px;
+    align-items: center;
+  }
+
+
+  .cart-item-details {
+    display: flex;
+    flex-direction: column;
+    text-transform: capitalize;
+  }
+
+  .cart-item-details p {
+    font-size: 18px;
+    margin: 0;
+  }
+  
+  .cart-item-details h2 {
+    margin: 0;
+    font-size: 18px; /* Adjusted text size */
+  }
+  
+  .item-category, .item-stock, .item-quantity {
+    margin: 2px 0;
+    font-size: 8px; /* Adjusted text size */
+    color: #666;
+  }
+
+
+
+
+
+
+  
+  
+  .item-quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .item-quantity-controls button {
+    border: none;
+    background-color: #ddd;
+    padding: 5px 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .item-quantity-controls span {
+    font-size: 12px;
+  }
+  
+  .item-price-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .item-price {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  
+  .remove-item {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: red;
+    cursor: pointer;
+  }
+  
+  .in-stock {
+    color: #007bff;
+    font-weight: bold;
+  }
