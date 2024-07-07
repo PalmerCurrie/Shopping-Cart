@@ -21,8 +21,10 @@ function App() {
       const itemExists = prevCartItems.some(cartItem => cartItem.id === item.id);
       if (itemExists) {
         return prevCartItems; 
-      }
-      return [...prevCartItems, item];
+      } else {
+        const updatedItems = [...cartItems, { ...item, quantity: 1 }];
+        return updatedItems;
+    }
     });
   };
 
@@ -97,7 +99,10 @@ const getItemsInCategory = async (filterCategory) => {
                                           loading={loading} 
                                           cartItems={cartItems} 
                                           addItemToCart={addItemToCart}/>} />
-          <Route path="/cart" element={<CartPage cartItems={cartItems}/>} />
+          <Route path="/cart" element={<CartPage 
+                                          cartItems={cartItems}
+                                          setCartItems={setCartItems}
+                                          loading={loading}/>} />
         </Routes>
       </div>
     </Router>
